@@ -73,17 +73,17 @@ opencv-python==4.1.0.25
 ## Testing the models
 Without training or extracting features, the models can be tested directly using the pre-trained models, pre-extracted feautures and GloVe word representations.  
 
--- Download the pre-extracted features using [this link](https://drive.google.com/file/d/1NWwJO6HSQXF_x3S7S-EMaX960kRoZV0j/view?usp=sharing). 
+- Download the pre-extracted features using [this link](https://drive.google.com/file/d/1NWwJO6HSQXF_x3S7S-EMaX960kRoZV0j/view?usp=sharing). 
 
--- Then, go to the download location and execute:  
+- Then, go to the download location and execute:  
 ```bash
 unzip extracted_features.zip
 mv extracted_features/* $VIREF_ROOT/features/
 rm -rf extracted_features/
 ```
--- Download the pre-trained models using [this link](https://drive.google.com/file/d/1Q0zhDZ3sts48ucHyqClCRdtSwNSqOICu/view?usp=sharing). (These weights are not identical to the ones used in obtaining the results in the paper.)
+- Download the pre-trained models using [this link](https://drive.google.com/file/d/1Q0zhDZ3sts48ucHyqClCRdtSwNSqOICu/view?usp=sharing). (These weights are not identical to the ones used in obtaining the results in the paper.)
 
--- Then, go to the download location and execute:  
+- Then, go to the download location and execute:  
 ```bash
 unzip pretrained_models.zip
 mv pretrained_models/viref/model_save $VIREF_ROOT/viref/
@@ -91,14 +91,14 @@ mv pretrained_models/viref_wo_a/model_save $VIREF_ROOT/viref_wo_a/
 mv pretrained_models/viref_wo_e/model_save $VIREF_ROOT/viref_wo_e/
 rm -rf pretrained_models/
 ```
--- Download the [GloVe word representations](https://nlp.stanford.edu/projects/glove/) by executing:  
+- Download the [GloVe word representations](https://nlp.stanford.edu/projects/glove/) by executing:  
 ```bash
 cd $VIREF_ROOT/data/
 wget http://nlp.stanford.edu/data/glove.6B.zip
 unzip glove.6B.zip
 rm glove.6B.100d.txt glove.6B.200d.txt glove.6B.300d.txt
 ```
--- To do the tests, run the following:
+- To do the tests, run the following:
 ```bash
 cd $VIREF_ROOT/
 python test.py
@@ -143,13 +143,13 @@ ILSVRC2015_train_00897012, ILSVRC2015_train_00980000, ILSVRC2015_train_00147000,
 
 2 pretrained models are employed as feature extractors. The first one is the pretrained VGG-16 model provided by Keras, and the other one is [c3d-keras](https://github.com/axon-research/c3d-keras) which is a Keras implementation of [C3D](https://github.com/facebook/C3D).   
 
--- Download the keras implementation of C3D:  
+- Download the keras implementation of C3D:  
 ```bash
 cd $VIREF_ROOT/
 bash download_c3d.sh
 ```
 
--- Download the already converted Keras model using [this link](https://drive.google.com/file/d/1-vvdsrd5GKM8xQyxNrjs2Pvrv0rbABE2/view?usp=sharing). Then, go to the download location and execute:  
+- Download the already converted Keras model using [this link](https://drive.google.com/file/d/1-vvdsrd5GKM8xQyxNrjs2Pvrv0rbABE2/view?usp=sharing). Then, go to the download location and execute:  
 ```bash
 unzip converted_c3d_models.zip
 mv converted_c3d_models/* $VIREF_ROOT/feature_extractors/c3d-keras/models/
@@ -157,7 +157,7 @@ rm -rf converted_c3d_models/
 ```
 
 
--- Extract the features (this may take a long time):  
+- Extract the features (this may take a long time):  
 ```bash
 cd $VIREF_ROOT/
 python extract_features.py
@@ -203,3 +203,11 @@ To see the license of the code, please refer to [LICENSE](LICENSE).
 # Acknowledgments
 
 This work was partially supported by the Scientific and Technological Research Council of Turkey (TUBITAK) through the project titled "Object Detection in Videos with Deep Neural Networks" (project no 117E054). The authors would like to thank Dr. Emre Akbas for discussions and suggestions on the paper.
+
+# Authors
+
+- Hazan Anayurt, email: [hazan.anayurt@metu.edu.tr](mailto:hazan.anayurt@metu.edu.tr)
+- Sezai Artun Ozyegin, email: [artun.ozyegin@metu.edu.tr](mailto:artun.ozyegin@metu.edu.tr)
+- Ulfet Cetin, email: [ulfet.rwth@gmail.com](mailto:ulfet.rwth@gmail.com)
+- Utku Aktas, email: [utkuaktascs@gmail.com](mailto:utkuaktascs@gmail.com)
+- Sinan Kalkan, email: [skalkan@metu.edu.tr](mailto:skalkan@metu.edu.tr)
