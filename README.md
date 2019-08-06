@@ -1,6 +1,6 @@
 # Searching for Ambiguous Objects in Videos using Relational Referring Expressions: Dataset, Code and Pre-trained Models
 
-This repository contains the dataset and code of our work entitled "[Searching for Ambiguous Objects in Videos using Relational Referring Expressions](arxiv)" which is accepted to be presented at [BMVC2019](https://bmvc2019.org/). Our work focuses on especially describing ambiguous objects in relation to other objects in the scene. For this end, we collect a challenging video referring expression dataset (called VIREF) and a feature-level attention-based recurrent deep architecture for both referring expression generation and comprehension for objects in videos.  
+This repository contains the dataset and code of our work entitled "[Searching for Ambiguous Objects in Videos using Relational Referring Expressions](http://arxiv.org/abs/1908.01189)" which is accepted to be presented at [BMVC2019](https://bmvc2019.org/). Our work focuses on especially describing ambiguous objects in relation to other objects in the scene. For this end, we collect a challenging video referring expression dataset (called VIREF) and a feature-level attention-based recurrent deep architecture for both referring expression generation and comprehension for objects in videos.  
 
 <p align="center">
   <img src="images/model.png" width="600" />
@@ -16,7 +16,7 @@ See [this video](https://youtu.be/vv1TcFnb7uc) for more examples.
 # The METU-VIREF Dataset: A Dataset of Relational Referring Expressions for Describing Ambiguous Objects in Videos
 For our dataset, we used the videos from [VIRAT Ground](http://www.viratdata.org/) and [ILSVRC2015 VID](http://image-net.org/challenges/LSVRC/2015/) datasets. VIRAT is a surveillance dataset and contains mainly people and vehicles. To line up with this and restrict our domain, we only used videos that contain vehicles from the ILSVRC dataset. Our dataset does not contain whole videos from these datasets (the videos need to be downloaded from the respective sources) but just referring expressions for video sequences containing an object pair. For this, we chose object pairs which had a relation that a meaningful referring expression could be written for. 
 
-We crowdsourced the collection of referring expressions via the [Microworkers](https://www.microworkers.com/) platform. For each object pair video sequence, we requested 3 REs describing the first object using the second object and 3 doing the reverse order (the order is important). For further information please check our [paper](arxiv).  
+We crowdsourced the collection of referring expressions via the [Microworkers](https://www.microworkers.com/) platform. For each object pair video sequence, we requested 3 REs describing the first object using the second object and 3 doing the reverse order (the order is important). For further information please see [our paper](http://arxiv.org/abs/1908.01189).  
 
 The dataset can be downloaded using [this link](data/refexp.csv). In our annotation format, every row contains `video name`, `obj1_id`, `obj2_id`, `referring expression`. For videos chosen from the VIRAT Ground Dataset, ids are the object ids and for the ones from the ILSVRC2015 VID Dataset, ids are the track ids.  
 
