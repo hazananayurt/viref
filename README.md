@@ -81,7 +81,7 @@ unzip extracted_features.zip
 mv extracted_features/* $VIREF_ROOT/features/
 rm -rf extracted_features/
 ```
-- Download the pre-trained models using [this link](https://drive.google.com/file/d/1Q0zhDZ3sts48ucHyqClCRdtSwNSqOICu/view?usp=sharing). (These weights are not identical to the ones used in obtaining the results in the paper.)
+- Download the pre-trained models using [this link](https://drive.google.com/file/d/1RVsJdelGgM8W_i65mF7xJASr9bReegvo/view?usp=sharing). (These weights are not identical to the ones used in obtaining the results in the paper.)
 
 - Then, go to the download location and execute:  
 ```bash
