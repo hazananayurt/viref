@@ -54,6 +54,8 @@ class FF1(torch.nn.Module):
 		self.fc1 = torch.nn.Linear(hidden_size, hidden_size)
 		self.fc2 = torch.nn.Linear(hidden_size, int(hidden_size/2))
 		self.fc3 = torch.nn.Linear(int(hidden_size/2), num_features)
+		self.softmax = torch.nn.Softmax(dim=2)
+		
 	def forward(self, decoder_out):
 		batch_size = decoder_out.size(0)
 		out = decoder_out
@@ -65,6 +67,7 @@ class FF1(torch.nn.Module):
 		out = F.relu(out)
 		out = self.fc3(out)
 		out = out.view(batch_size, -1, out.size(1))
+		out = self.softmax(out)
 		return out
 		
 		
@@ -116,6 +119,7 @@ class Model(torch.nn.Module):
 		final_out_list = []
 		for i in range(int(out.size(1))):
 			scale_weights = out[:, i, :]
+			#print(scale_weights)
 			_, (hn, _) = self.encoder(features, scale_weights, h0, c0)
 			out_i = self.ff2(decoder_out[:, i, :], hn)
 			final_out_list.append(out_i.unsqueeze(0))
